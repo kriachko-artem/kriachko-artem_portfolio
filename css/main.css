@@ -1,3 +1,230 @@
 *{
 	box-sizing: border-box;
+	font-family: 'Raleway', sans-serif;
 }
+.wrapper{
+	height: 100vh;
+/*	overflow-y: auto;
+	scroll-snap-type: y proximity;
+*/}
+.container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	max-width: 1210px;
+	padding: 0 20px;
+	margin: 0 auto;
+	position: relative;
+}
+.header-bg{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+.header-bg .item{
+	width: 100%;
+	height: 100%;
+}
+.header-bg .item.one{
+	background: url(../imgs/first-view_bg1.jpg) no-repeat;
+	background-position: 50% 0;
+	background-size: cover;
+}
+header{
+	height: 100vh;
+/*	scroll-snap-align: start;
+*/}
+nav{
+	width: 100%;
+	height: 50px;
+	backdrop-filter: blur(50px);
+	background-color: rgba(250,250,250, 0.78);
+    -webkit-box-shadow: 0px 0px 30px 30px rgba(250,250,250, 0.8); 
+	-moz-box-shadow: 0px 0px 30px 30px rgba(250,250,250, 0.8); 
+	box-shadow: 0px 0px 30px 30px rgba(250,250,250, 0.8);
+}
+nav ul{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+nav ul a{
+	display: block;
+	font-size: 20px;
+	color: #474747;
+	text-transform: uppercase;
+	transition: 0.3s;
+}
+nav ul a:hover{
+	color: #486c8e;
+}
+nav ul a.active{
+	color: #486c8e;
+}
+
+.first-view{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	position: relative;
+	z-index: 1;
+	padding-bottom: 20px;
+}
+.first-view .about-me{
+	padding: 50px 20px 0;
+	width: 100%;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: start;
+	flex: 1 1 auto;
+}
+.first-view .about-me .name_and_career{
+	width: 400px;
+	font-family: 'Raleway', sans-serif;
+	color: #474747;
+}
+.first-view .about-me .name{
+	font-size: 45px;
+	margin-bottom: 40px;
+	font-weight: 600;
+}
+.first-view .about-me .career{
+	font-size: 30px;
+	line-height: 140%;
+}
+.first-view .about-me .logo{
+	width: 100px;
+	height: 50px;
+}
+.first-view .about-me .logo img{
+	width: 100%;
+	height: 100%;
+}
+
+.first-view .info-block{
+	padding: 0 20px;
+	display: flex;
+	backdrop-filter: blur(10px);
+	background-color: rgba(250,250,250, 0.76);
+    -webkit-box-shadow: 0px 0px 100px 82px rgba(250,250,250, 0.8); 
+	-moz-box-shadow: 0px 0px 100px 82px rgba(250,250,250, 0.8); 
+	box-shadow: 0px 0px 100px 82px rgba(250,250,250, 0.8);
+}
+.first-view .buttons{
+	display: flex;
+	flex-direction: column;
+	filter: blur(0);
+	position: relative;
+	margin-right: 35px;
+}
+.first-view .buttons button{
+	width: 250px;
+	padding: 10px 0;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(1px);
+	border: none;
+	border-radius: 7px;
+	margin-bottom: 10px;
+	transition: 0.3s;
+}
+.first-view .buttons button:hover{
+	transform: scale(1.05);
+	background: rgba(101, 101, 101, 0.5);
+}
+.first-view .buttons button.active{
+	transform: scale(1.05);
+	background: rgba(101, 101, 101, 0.5);
+}
+.first-view .buttons button:last-child{
+	margin-bottom: 0;
+}
+.first-view .info-block .info{
+	width: 80%;
+	display: flex;
+	align-items: center;
+}
+.first-view .info-block .my-skills{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.first-view .info-block .my-skills li{
+	display: flex;
+	align-items: center;
+	margin: 0 20px 10px 0;
+	font-family: 'Raleway', sans-serif;
+	color: #474747;
+}
+.first-view .info-block .my-skills li:last-child{
+	margin-right: 0;
+}
+.first-view .info-block .my-skills img{
+	height: 33px;
+	margin-right: 5px;
+}
+.first-view .info-block .something p{
+	display: block;
+	max-width: 700px;
+	font-size: 20px;
+	line-height: 120%;
+	font-family: 'Raleway', sans-serif;
+	color: #474747;
+}
+.first-view .info-block .remark{
+	display: flex;
+	align-items: center;
+}
+.first-view .info-block .remark p{
+	font-size: 15px;
+	text-align: right;
+	font-family: 'Raleway', sans-serif;
+	color: #474747;
+}
+.first-view .info-block .my-skills,
+.first-view .info-block .something{
+	display: none;
+}
+.first-view .info-block .my-skills.show,
+.first-view .info-block .something.show{
+	display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+main{
+	backdrop-filter: blur(10px);
+	background-color: rgba(250,250,250, 0.76);
+	-webkit-box-shadow: 0px 0px 100px 82px rgba(250,250,250, 0.8); 
+	-moz-box-shadow: 0px 0px 100px 82px rgba(250,250,250, 0.8); 
+	box-shadow: 0px 0px 100px 82px rgba(250,250,250, 0.8);
+	/*scroll-snap-align: start;*/
+}
+
+
+
+
+
+
+
+
+
+
+
