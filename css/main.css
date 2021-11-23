@@ -4,9 +4,10 @@
 }
 .wrapper{
 	height: 100vh;
-/*	overflow-y: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
 	scroll-snap-type: y proximity;
-*/}
+}
 .container{
 	display: flex;
 	flex-direction: column;
@@ -22,21 +23,82 @@
 	position: fixed;
 	width: 100%;
 	height: 100%;
-	z-index: 0;
+	background: rgb(180,194,214);
+	background: linear-gradient(129deg, rgba(180,194,214,1) 0%, rgba(212,219,230,1) 63%);
+	z-index: -1;
 }
 .header-bg .item{
 	width: 100%;
 	height: 100%;
 }
 .header-bg .item.one{
-	background: url(../imgs/first-view_bg1.jpg) no-repeat;
+	background: url(../imgs/first-view_bg1-1.png) no-repeat;
 	background-position: 50% 0;
 	background-size: cover;
+	position: relative;
+	z-index: 1;
+}
+.header-bg .cloud-1{
+	display: block;
+	width: 200px;
+	height: 100px;
+	opacity: 0.3;
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	animation: cloud1 35s linear infinite;
+}
+@keyframes cloud1 {
+    0% { left: 0%;
+    	opacity: 0; }   
+    5% { opacity: 0.1; }
+    10% { opacity: 0.3; }
+    80% { opacity: 0.1; }
+    100% { left: 70%; 
+    	opacity: 0;}
+}
+.header-bg .cloud-2{
+	display: block;
+	width: 500px;
+	height: 250px;
+	opacity: 0.3;
+	position: absolute;
+	top: 300px;
+	left: 60%;
+	animation: cloud2 60s linear infinite;
+}
+@keyframes cloud2 {
+    0% { left: 60%;
+    	opacity: 0; }   
+    5% { opacity: 0.2; }
+    10% { opacity: 0.5; }
+    80% { opacity: 0.2; }
+    100% { left: 0%; 
+    	opacity: 0;}
+}
+.header-bg .cloud-3{
+	display: block;
+	width: 500px;
+	height: 250px;
+	opacity: 0.3;
+	position: absolute;
+	top: 200px;
+	left: 60%;
+	animation: cloud3 90s linear infinite;
+}
+@keyframes cloud3 {
+    0% { left: 15%;
+    	opacity: 0; }   
+    5% { opacity: 0.2; }
+    10% { opacity: 0.5; }
+    80% { opacity: 0.2; }
+    100% { left: 70%; 
+    	opacity: 0;}
 }
 header{
-	height: 100vh;
-/*	scroll-snap-align: start;
-*/}
+	height: 90vh;
+	scroll-snap-align: start;
+}
 nav{
 	width: 100%;
 	height: 50px;
@@ -73,7 +135,6 @@ nav ul a.active{
 	height: 100%;
 	position: relative;
 	z-index: 1;
-	padding-bottom: 20px;
 }
 .first-view .about-me{
 	padding: 50px 20px 0;
@@ -88,6 +149,8 @@ nav ul a.active{
 	width: 400px;
 	font-family: 'Raleway', sans-serif;
 	color: #474747;
+	position: relative;
+	z-index: 1;
 }
 .first-view .about-me .name{
 	font-size: 45px;
@@ -110,11 +173,24 @@ nav ul a.active{
 .first-view .info-block{
 	padding: 0 20px;
 	display: flex;
-	-webkit-backdrop-filter: blur(10px);
+	position: relative;
+	z-index: 2;
+	/*backdrop-filter: blur(40px);
 	background-color: rgba(250,250,250, 0.76);
     -webkit-box-shadow: 0px 0px 100px 82px rgba(250,250,250, 0.8); 
 	-moz-box-shadow: 0px 0px 100px 82px rgba(250,250,250, 0.8); 
-	box-shadow: 0px 0px 100px 82px rgba(250,250,250, 0.8);
+	box-shadow: 0px 0px 100px 82px rgba(250,250,250, 0.8);*/
+}
+.first-view .info-block:before{
+	content: '';
+	position: absolute;
+	width: 200%;
+	height: 500%;
+	left: -50%;
+	top: -50px;
+	background-color: rgba(250,250,250, 1);
+	filter: blur(40px);
+	z-index: -1;
 }
 .first-view .buttons{
 	display: flex;
@@ -127,7 +203,6 @@ nav ul a.active{
 	width: 250px;
 	padding: 10px 0;
 	background: rgba(0, 0, 0, 0.5);
-	-webkit-backdrop-filter: blur(1px);
 	border: none;
 	border-radius: 7px;
 	margin-bottom: 10px;
@@ -210,18 +285,126 @@ nav ul a.active{
 
 
 main{
-	-webkit-backdrop-filter: blur(10px);
+	position: relative;
+	z-index: 1;
+	padding-top: 50px;
+	min-height: 1000px;
+	backdrop-filter: blur(40px);
 	background-color: rgba(250,250,250, 0.76);
-	-webkit-box-shadow: 0px 0px 100px 82px rgba(250,250,250, 0.8); 
+/*	-webkit-box-shadow: 0px 0px 100px 82px rgba(250,250,250, 0.8); 
 	-moz-box-shadow: 0px 0px 100px 82px rgba(250,250,250, 0.8); 
 	box-shadow: 0px 0px 100px 82px rgba(250,250,250, 0.8);
-	/*scroll-snap-align: start;*/
+*/	scroll-snap-align: start;
 }
-
-
-
-
-
+main section{
+	position: relative;
+	z-index: 3;
+}
+main h2{
+	font-size: 30px;
+	text-align: center;
+	display: none;
+	animation: showProjectsTittle 1s linear;
+	position: relative;
+	z-index: 100;
+}
+@keyframes showProjectsTittle {
+	0% { opacity: 0; }
+	100% { opacity: 100; }
+}
+.projects-slider{
+	width: 100vw;
+	padding: 30px 0;
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+	overflow-y: auto;
+	scroll-snap-type: x mandatory;
+}
+.projects-slider .item{
+	min-width: 250px;
+	max-width: 250px;
+	margin-right: 70px;
+	position: relative;
+	left: 20px;
+	scroll-snap-align: center;
+	scroll-snap-stop: always;
+	transition: 0.1s;
+}
+.projects-slider .item:hover{
+	transform: scale(1.05);
+}
+.projects-slider .item:hover .description-block{
+	background-color: rgba(34, 37, 46, 0.3);
+}
+.projects-slider .item .img-holder{
+	width: 100%;
+	height: 170px;
+	background-color: red;
+	border-radius: 15px;
+	margin-bottom: 10px;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+.projects-slider .item .img-holder .label{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(75, 75, 75, 0.3);
+	opacity: 0;
+	transition: 0.3s;
+	text-transform: uppercase;
+}
+.projects-slider .item .img-holder:hover .label{
+	opacity: 1;
+}
+.projects-slider .item .description-block{
+	border-radius: 10px;
+	padding: 10px;
+	transition: 0.1s;
+	height: 75px;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+.projects-slider .item .description-block h3{
+	margin-bottom: 5px;
+	transition: 0.2;
+}
+.projects-slider .item .description-block p{
+	display: block;
+	transition: 0.2s;
+}
+.projects-slider .item .description-block:hover{
+	background-color: rgba(34, 37, 46, 0.1);
+}
+.projects-slider .item .description-block .label{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(75, 75, 75, 0.3);
+	opacity: 0;
+	transition: 0.3s;
+	text-transform: uppercase;
+}
+.projects-slider .item .description-block:hover h3,
+.projects-slider .item .description-block:hover p {
+	opacity: 0;
+}
+.projects-slider .item .description-block:hover .label{
+	opacity: 1;
+}
 
 
 
