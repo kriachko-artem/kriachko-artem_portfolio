@@ -305,6 +305,8 @@ nav ul a.active{
 .first-view .buttons button{
 	width: 250px;
 	padding: 10px 0;
+	font-size: 20px;
+	line-height: 120%;
 	background: rgba(0, 0, 0, 0.5);
 	border: none;
 	border-radius: 7px;
